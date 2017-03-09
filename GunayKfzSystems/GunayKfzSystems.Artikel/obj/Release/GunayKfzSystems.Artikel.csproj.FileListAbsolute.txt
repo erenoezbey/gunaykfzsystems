@@ -1,0 +1,10 @@
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\bin\Release\GunayKfzSystems.Artikel.dll.config
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\bin\Release\GunayKfzSystems.Artikel.dll
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\bin\Release\GunayKfzSystems.Artikel.pdb
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Artikel\obj\Release\GunayKfzSystems.Artikel.csprojResolveAssemblyReference.cache
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Artikel\obj\Release\View\ArtikelView.baml
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Artikel\obj\Release\View\ArtikelView.g.cs
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Artikel\obj\Release\GunayKfzSystems.Artikel_MarkupCompile.cache
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Artikel\obj\Release\GunayKfzSystems.Artikel.g.resources
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Artikel\obj\Release\GunayKfzSystems.Artikel.dll
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Artikel\obj\Release\GunayKfzSystems.Artikel.pdb

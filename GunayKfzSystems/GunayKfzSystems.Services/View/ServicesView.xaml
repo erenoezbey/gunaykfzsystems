@@ -1,0 +1,161 @@
+﻿<UserControl x:Class="GunayKfzSystems.Services.View.ServicesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                   xmlns:commonControls="clr-namespace:GunayKfzSystems.Core.CommonControls;assembly=GunayKfzSystems.Core"
+             xmlns:local="clr-namespace:GunayKfzSystems.Services.View"
+                 xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
+             xmlns:extendedGridControl="clr-namespace:ExtendedGrid.ExtendedGridControl;assembly=ExtendedGrid"
+             xmlns:extendedColumn="clr-namespace:ExtendedGrid.ExtendedColumn;assembly=ExtendedGrid"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="NameCellStyle" TargetType="DataGridCell">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="60"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Services" Grid.Column="0">
+
+            <extendedGridControl:ExtendedDataGrid  AutoGenerateColumns="False" IsEnabled="{c:Binding !IsEditing}"   HideColumnChooser="False"
+                                                   GroupByControlVisibility="Collapsed"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              ClipboardCopyMode="IncludeHeader"
+                              ItemsSource="{Binding ServiceCollection}"
+                              SelectedItem="{Binding SelectedService}"
+                                >
+                <DataGrid.Columns>
+                    <extendedColumn:ExtendedDataGridTextColumn Header="Service" AllowAutoFilter="True" IsReadOnly="True" Width="3*"
+                                          Binding="{Binding AtionName}" >
+                        <DataGridTextColumn.ElementStyle>
+                            <Style>
+                                <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </extendedColumn:ExtendedDataGridTextColumn>
+                    <extendedColumn:ExtendedDataGridTextColumn Header="Servicebeschreibung" AllowAutoFilter="True"  IsReadOnly="True" Width="1*"
+                                          Binding="{Binding Bemerkung}" />
+                    <extendedColumn:ExtendedDataGridTextColumn Header="Aktionpreis" AllowAutoFilter="False"  IsReadOnly="True" CellStyle="{StaticResource NameCellStyle}" Width="1*"
+                                           Binding="{Binding Aktionpreis, StringFormat={}{0:N2} €}" />
+
+                </DataGrid.Columns>
+            </extendedGridControl:ExtendedDataGrid>
+
+
+
+        </GroupBox>
+
+        <GroupBox Header="Details" Grid.Column="2" IsEnabled="{Binding IsEditing}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <!--ID-->
+                    <RowDefinition Height="Auto"/>
+                    <!--Ationname-->
+                    <RowDefinition Height="Auto"/>
+                    <!--Aktionpreis-->
+                   <RowDefinition Height="Auto"/>
+                    <!--Bemerkung-->
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- ID -->
+                <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Content="ServiceNr:" />
+
+                <TextBox Grid.Row="0"
+                                 Grid.Column="1"
+                                 IsEnabled="false"
+                                 Text="{Binding SelectedService.Id}" />
+
+                <!-- Artikelname-->
+                <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Content="Service:" />
+
+                <TextBox Grid.Row="1"
+                                 Grid.Column="1"
+                                 IsEnabled="True"
+                                 Text="{Binding SelectedService.AtionName}" />
+
+
+                <!-- Artikelname-->
+                <Label Grid.Row="2"
+                               Grid.Column="0"
+                               Content="Einzelpreis:" />
+
+                <TextBox Grid.Row="2"
+                                 Grid.Column="1"
+                                 IsEnabled="True"
+                                 Text="{Binding SelectedService.Aktionpreis, StringFormat={}{0:N2} €}" />
+
+
+                <!-- Artikelbeschreibung-->
+                <Label Grid.Row="4"
+                               Grid.Column="0"
+                               Content="Servicebeschreibung:" />
+
+                <TextBox Grid.Row="4" 
+                                 Grid.Column="1"
+                             TextWrapping="Wrap" 
+                         AcceptsReturn="True"
+                         AcceptsTab="True"
+                                 IsEnabled="True"
+                                 Text="{Binding SelectedService.Bemerkung}" />
+
+
+
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Menü" Grid.Column="3">
+            <!-- Action Buttons -->
+            <WrapPanel>
+                <commonControls:MenuButton ToolTip="Bearbeitung abbrechen"
+                                          Icon="{DynamicResource appbar_cancel}"
+                                          Command="{Binding CancelCommand}"
+                                           IsEnabled="{c:Binding IsEditing}" />
+
+
+                <commonControls:MenuButton ToolTip="Neuen Service hinzufügen"
+                                          Icon="{DynamicResource appbar_add}"
+                                          Command="{Binding AddItemCommand}"
+                                          IsEnabled="{c:Binding !IsEditing}" />
+
+                <commonControls:MenuButton ToolTip="Bestehenden Service bearbeiten"
+                                          Icon="{DynamicResource appbar_edit}"
+                                          Command="{Binding EditItemCommand}"
+                                          IsEnabled="{c:Binding '!IsEditing AND SelectedService != null'}" />
+
+
+                <commonControls:MenuButton ToolTip="Service speichern"
+                                          Icon="{DynamicResource appbar_save}"
+                                          Command="{Binding SaveItemCommand}"
+                                          IsEnabled="{Binding IsEditing}" />
+
+                <commonControls:MenuButton ToolTip="Markierten Service löschen"
+                                          Icon="{DynamicResource appbar_delete}"
+                                          Command="{Binding DeleteItemCommand}"
+                                          IsEnabled="{c:Binding '!IsEditing AND SelectedService != null'}" />
+
+
+
+
+
+
+            </WrapPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>

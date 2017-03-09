@@ -1,0 +1,9 @@
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\bin\Debug\GunayKfzSystems.Services.dll
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\bin\Debug\GunayKfzSystems.Services.pdb
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Services\obj\Debug\View\ServicesView.g.cs
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Services\obj\Debug\GunayKfzSystems.Services_MarkupCompile.cache
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Services\obj\Debug\GunayKfzSystems.Services_MarkupCompile.lref
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Services\obj\Debug\View\ServicesView.baml
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Services\obj\Debug\GunayKfzSystems.Services.g.resources
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Services\obj\Debug\GunayKfzSystems.Services.dll
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Services\obj\Debug\GunayKfzSystems.Services.pdb

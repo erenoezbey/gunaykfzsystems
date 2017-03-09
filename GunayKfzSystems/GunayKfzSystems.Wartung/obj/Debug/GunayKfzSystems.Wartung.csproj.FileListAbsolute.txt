@@ -1,0 +1,9 @@
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\bin\Debug\GunayKfzSystems.Wartung.dll
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\bin\Debug\GunayKfzSystems.Wartung.pdb
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Wartung\obj\Debug\GunayKfzSystems.Wartung.csprojResolveAssemblyReference.cache
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Wartung\obj\Debug\View\WartungView.baml
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Wartung\obj\Debug\View\WartungView.g.cs
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Wartung\obj\Debug\GunayKfzSystems.Wartung_MarkupCompile.cache
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Wartung\obj\Debug\GunayKfzSystems.Wartung.g.resources
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Wartung\obj\Debug\GunayKfzSystems.Wartung.dll
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Wartung\obj\Debug\GunayKfzSystems.Wartung.pdb

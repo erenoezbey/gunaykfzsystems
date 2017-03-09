@@ -1,0 +1,8 @@
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\bin\Debug\GunayKfzSystems.Kunden.dll
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\bin\Debug\GunayKfzSystems.Kunden.pdb
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Kunden\obj\Debug\View\KundenView.baml
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Kunden\obj\Debug\View\KundenView.g.cs
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Kunden\obj\Debug\GunayKfzSystems.Kunden_MarkupCompile.cache
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Kunden\obj\Debug\GunayKfzSystems.Kunden.g.resources
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Kunden\obj\Debug\GunayKfzSystems.Kunden.dll
+C:\Users\R916579\development\Beispiele\GunayKfzSystems\GunayKfzSystems\GunayKfzSystems.Kunden\obj\Debug\GunayKfzSystems.Kunden.pdb

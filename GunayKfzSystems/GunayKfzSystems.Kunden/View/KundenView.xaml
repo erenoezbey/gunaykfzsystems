@@ -1,0 +1,274 @@
+﻿<UserControl x:Class="GunayKfzSystems.Kunden.View.KundenView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:commonControls="clr-namespace:GunayKfzSystems.Core.CommonControls;assembly=GunayKfzSystems.Core"
+             xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
+             xmlns:extendedGridControl="clr-namespace:ExtendedGrid.ExtendedGridControl;assembly=ExtendedGrid"
+             xmlns:extendedColumn="clr-namespace:ExtendedGrid.ExtendedColumn;assembly=ExtendedGrid"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="NameCellStyle" TargetType="DataGridCell">
+            <Setter Property="HorizontalAlignment" Value="Right" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="60"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Kundene" Grid.Column="0">
+
+            <extendedGridControl:ExtendedDataGrid  AutoGenerateColumns="False" IsEnabled="{c:Binding !IsEditing}"   HideColumnChooser="False"
+                                                   GroupByControlVisibility="Collapsed"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              ClipboardCopyMode="IncludeHeader"
+                              ItemsSource="{Binding KundenCollection}"
+                              SelectedItem="{Binding SelectedKunden}" 
+                                >
+                <DataGrid.Columns>
+                    <extendedColumn:ExtendedDataGridTextColumn Header="Kunden Nr" AllowAutoFilter="True" IsReadOnly="True" Width="1*"
+                                          Binding="{Binding KundenNr}" />
+                    <extendedColumn:ExtendedDataGridTextColumn Header="Firma" AllowAutoFilter="True"  IsReadOnly="True"  Width="1*"
+                                          Binding="{Binding Firma}" />
+                    <extendedColumn:ExtendedDataGridTextColumn Header="Nachname" AllowAutoFilter="True"  IsReadOnly="True"  Width="1*"
+                                          Binding="{Binding KontaktNachname}" />
+                    <extendedColumn:ExtendedDataGridTextColumn Header="Vorname" AllowAutoFilter="True"  IsReadOnly="True"  Width="2*"
+                                          Binding="{Binding KontaktVorname}" />
+                    <extendedColumn:ExtendedDataGridTextColumn Header="Telefon" AllowAutoFilter="True"  IsReadOnly="True"  Width="1*"
+                                          Binding="{Binding Telefonnummer}" />
+
+                </DataGrid.Columns>
+            </extendedGridControl:ExtendedDataGrid>
+
+
+
+        </GroupBox>
+
+        <GroupBox Header="Details" Grid.Column="2" IsEnabled="{Binding IsEditing}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <!-- 0KundenNr-->
+                    <RowDefinition Height="Auto"/>
+                    <!--1Firma-->
+                    <RowDefinition Height="Auto"/>
+                    <!--2KontaktVorname-->
+                    <RowDefinition Height="Auto"/>
+                    <!--3KontaktNachname-->
+                    <RowDefinition Height="Auto"/>
+                    <!--4EmailAdresse-->
+                    <RowDefinition Height="Auto"/>
+                    <!--5Rechnungsadresse-->
+                    <RowDefinition Height="Auto"/>
+                    <!--6Ort-->
+                    <RowDefinition Height="Auto"/>
+                    <!--7Bundesland-->
+                    <RowDefinition Height="Auto"/>
+                    <!--8Postleitzahl-->
+                    <RowDefinition Height="Auto"/>
+                    <!--9Telefonnummer-->
+                    <RowDefinition Height="Auto"/>
+                    <!--10Durchwahl-->
+                    <RowDefinition Height="Auto"/>
+                    <!--11Faxnummer-->
+                    <RowDefinition Height="Auto"/>
+                    <!--13Anmerkungen-->
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- KundenNr -->
+                <Label Grid.Row="0"
+                               Grid.Column="0"
+                               Content="KundenNr:" />
+
+                <TextBox Grid.Row="0"
+                                 Grid.Column="1"
+                                  IsEnabled="False"
+                                 Text="{Binding SelectedKunden.KundenNr}" />
+
+
+                <!-- Firma -->
+                <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Content="Firma:" />
+
+                <TextBox Grid.Row="1"
+                                 Grid.Column="1"
+                               IsEnabled="True"
+                                 Text="{Binding SelectedKunden.Firma}" />
+
+
+                <!-- KontaktVorname -->
+                <Label Grid.Row="2"
+                               Grid.Column="0"
+                               Content="Vorname:" />
+
+                <TextBox Grid.Row="2"
+                                 Grid.Column="1"
+                                  IsEnabled="True"
+                                 Text="{Binding SelectedKunden.KontaktVorname}" />
+
+                <!-- KontaktNachname -->
+                <Label Grid.Row="3"
+                               Grid.Column="0"
+                               Content="Nachname:" />
+
+                <TextBox Grid.Row="3"
+                                 Grid.Column="1"
+                                  IsEnabled="True"
+                                 Text="{Binding SelectedKunden.KontaktNachname}" />
+
+
+
+                <!-- EmailAdresse -->
+                <Label Grid.Row="4"
+                               Grid.Column="0"
+                               Content="Email Adresse:" />
+
+                <TextBox Grid.Row="4"
+                                 Grid.Column="1"
+                                  IsEnabled="True"
+                                 Text="{Binding SelectedKunden.EmailAdresse}" />
+
+                <!-- Rechnungsadresse -->
+                <Label Grid.Row="5"
+                               Grid.Column="0"
+                               Content="Rechnungsadresse:" />
+
+                <TextBox Grid.Row="5"
+                                 Grid.Column="1"
+                                 IsEnabled="True"
+                                 Text="{Binding SelectedKunden.Rechnungsadresse}" />
+
+
+
+                <!-- Ort -->
+                <Label Grid.Row="6"
+                               Grid.Column="0"
+                               Content="Ort:" />
+
+                <TextBox Grid.Row="6"
+                                 Grid.Column="1"
+                                  IsEnabled="True"
+                                 Text="{Binding SelectedKunden.Ort}" />
+
+                <!-- Bundesland -->
+                <Label Grid.Row="7"
+                               Grid.Column="0"
+                               Content="Bundesland:" />
+
+                <TextBox Grid.Row="7"
+                                 Grid.Column="1"
+                                 IsEnabled="True"
+                                 Text="{Binding SelectedKunden.Bundesland}" />
+
+
+
+                <!-- Postleitzahl -->
+                <Label Grid.Row="8"
+                               Grid.Column="0"
+                               Content="Postleitzahl:" />
+
+                <TextBox Grid.Row="8"
+                                 Grid.Column="1"
+                                  IsEnabled="True"
+                                 Text="{Binding SelectedKunden.Postleitzahl}" />
+
+                <!-- Telefonnummer -->
+                <Label Grid.Row="9"
+                               Grid.Column="0"
+                               Content="Telefonnummer:" />
+
+                <TextBox Grid.Row="9"
+                                 Grid.Column="1"
+                                 IsEnabled="True"
+                                 Text="{Binding SelectedKunden.Telefonnummer}" />
+
+                <!-- Durchwahl -->
+                <Label Grid.Row="10"
+                               Grid.Column="0"
+                               Content="Durchwahl:" />
+
+                <TextBox Grid.Row="10"
+                                 Grid.Column="1"
+                                  IsEnabled="True"
+                                 Text="{Binding SelectedKunden.Durchwahl}" />
+
+                <!-- Faxnummer -->
+                <Label Grid.Row="11"
+                               Grid.Column="0"
+                               Content="Faxnummer:" />
+
+                <TextBox Grid.Row="11"
+                                 Grid.Column="1"
+                                 IsEnabled="True"
+                                 Text="{Binding SelectedKunden.Faxnummer}" />
+
+
+
+                <!-- Bemerkung-->
+                <Label Grid.Row="12"
+                               Grid.Column="0"
+                               Content="Anmerkungen:" />
+
+                <TextBox Grid.Row="12" 
+                                 Grid.Column="1"
+                             TextWrapping="Wrap" 
+                         AcceptsReturn="True"
+                         AcceptsTab="True"
+                                 IsEnabled="True"
+                                 Text="{Binding SelectedKunden.Anmerkungen}" />
+
+
+
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Menü" Grid.Column="3">
+            <!-- Action Buttons -->
+            <WrapPanel>
+                <commonControls:MenuButton ToolTip="Bearbeitung abbrechen"
+                                          Icon="{DynamicResource appbar_cancel}"
+                                          Command="{Binding CancelCommand}"
+IsEnabled="{c:Binding IsEditing}" />
+
+
+                <commonControls:MenuButton ToolTip="Neues Kunden hinzufügen"
+                                          Icon="{DynamicResource appbar_add}"
+                                          Command="{Binding AddItemCommand}"
+                                          IsEnabled="{c:Binding !IsEditing}" />
+
+                <commonControls:MenuButton ToolTip="Bestehendes Kunden bearbeiten"
+                                          Icon="{DynamicResource appbar_edit}"
+                                          Command="{Binding EditItemCommand}"
+                                          IsEnabled="{c:Binding '!IsEditing AND SelectedKunden != null'}" />
+
+
+                <commonControls:MenuButton ToolTip="Kunden speichern"
+                                          Icon="{DynamicResource appbar_save}"
+                                          Command="{Binding SaveItemCommand}"
+                                          IsEnabled="{Binding IsEditing}" />
+
+                <commonControls:MenuButton ToolTip="Markiertes Kunden löschen"
+                                          Icon="{DynamicResource appbar_delete}"
+                                          Command="{Binding DeleteItemCommand}"
+                                          IsEnabled="{c:Binding '!IsEditing AND SelectedKunden != null'}" />
+
+
+
+
+
+
+            </WrapPanel>
+        </GroupBox>
+    </Grid>
+</UserControl>

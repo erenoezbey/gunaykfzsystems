@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="GunayKfzSystems.Core.CommonControls.UnboundedBusyIndicator"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
+             x:Name="BusyIndicator"
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <ContentPresenter Grid.Row="0"
+                          Visibility="{c:Binding !IsBusy, ElementName=BusyIndicator}"
+                          Content="{Binding ElementName=BusyIndicator, Path=NonBusyContent}" />
+
+        <Grid Grid.Row="0"
+              Visibility="{c:Binding ElementName=BusyIndicator, Path=IsBusy}"
+              Background="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}, Path=Background}"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <controls:ProgressRing Grid.Row="1"
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Center"
+                                        IsActive="True" />
+
+            <ContentPresenter Grid.Row="2"
+                          Grid.Column="1"
+                          HorizontalAlignment="Center"
+                          Content="{Binding ElementName=BusyIndicator, Path=BusyContent}" />
+
+        </Grid>
+    </Grid>
+</UserControl>
